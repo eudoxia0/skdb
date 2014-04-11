@@ -5,5 +5,4 @@ package_dir: ~/.skdb/packages/
 
 #where are packages available from the web?
 repositories:
-    - http://packages.gnusha.org/
-
+    - diyhpl.us
