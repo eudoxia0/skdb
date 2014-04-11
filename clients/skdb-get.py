@@ -10,7 +10,7 @@ import sys, os
 import getpass
 from string import join
 import skdb
-from skdb import settings
+from skdb.core import settings
 
 #for parsing command line arguments
 from skdb.thirdparty import optfunc
@@ -23,7 +23,7 @@ def get_package(package_name, verbose=False, repo=settings.paths["repositories"]
 
     if not isinstance(repo, list): repo = [repo] #it's actually a list in the config file
     if repo[0][-1:] != "/": repo[0] = repo[0]+"/" #add trailing slash to url if not there
-    package_url = "git://" + repo[0] + "/" + package_name + ".git"
+    package_url = "git://" + repo[0] + package_name
 
     #make package_dir exist
     os.system('mkdir -p "%s"' % (package_dir)) #package names cant have spaces so why the quotes?
